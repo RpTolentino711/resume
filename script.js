@@ -72,30 +72,129 @@
     window.addEventListener('scroll', updateNavigationMotion, { passive: true });
   }
 
-  // Mobile Navigation Drawer
+  // Mobile Navigation Drawer & Dynamic Star Tracker
   function setupMobileNav() {
     const mobileBtn = document.getElementById('btnMobileToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
-    if (mobileBtn && mobileDrawer) {
-      mobileBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        mobileDrawer.classList.toggle('open');
-      });
+    const mobileLinks = Array.from(document.querySelectorAll('.mobile-drawer-link'));
+    const mobileTag = document.getElementById('mobileActiveTag');
+    if (!mobileBtn || !mobileDrawer) return;
 
-      // Close when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!mobileDrawer.contains(e.target) && e.target !== mobileBtn) {
-          mobileDrawer.classList.remove('open');
+    const sectionIds = ['hero', 'about', 'projects', 'ecosystem', 'certifications', 'resume'];
+    const sectionNames = {
+      hero: 'Home',
+      about: 'About',
+      projects: 'Projects',
+      ecosystem: 'Tech Stack',
+      certifications: 'Certifications',
+      resume: 'ATS Resume'
+    };
+
+    function determineActiveSectionId() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollFocus = scrollY + 140;
+
+      // Bottom of page check
+      if ((window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 60)) {
+        return 'resume';
+      }
+
+      let activeId = 'hero';
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const top = rect.top + scrollY;
+          if (scrollFocus >= top - 20) {
+            activeId = id;
+            break;
+          }
+        }
+      }
+      return activeId;
+    }
+
+    function syncMobileActive(activeId) {
+      const currentId = activeId || determineActiveSectionId();
+      
+      mobileLinks.forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const targetId = href.replace('#', '');
+        if (targetId === currentId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
         }
       });
 
-      // Close when clicking any link
-      mobileDrawer.querySelectorAll('.mobile-drawer-link').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileDrawer.classList.remove('open');
-        });
-      });
+      if (mobileTag && sectionNames[currentId]) {
+        mobileTag.textContent = sectionNames[currentId];
+      }
     }
+
+    window.__syncMobileNav = syncMobileActive;
+
+    // Toggle drawer open/close
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mobileDrawer.classList.toggle('open');
+      if (isOpen) {
+        syncMobileActive();
+      }
+    });
+
+    // Close when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!mobileDrawer.contains(e.target) && e.target !== mobileBtn) {
+        mobileDrawer.classList.remove('open');
+      }
+    });
+
+    // Prevent tap inside drawer from bubbling to document click
+    mobileDrawer.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Reliable tap navigation for each drawer link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+
+        // Immediate visual star and tag update
+        syncMobileActive(targetId);
+
+        // Close drawer
+        mobileDrawer.classList.remove('open');
+
+        // Smooth scroll with precise sticky header offset
+        if (targetEl) {
+          const header = document.querySelector('.editorial-header');
+          const headerH = header ? header.offsetHeight : 64;
+          const rect = targetEl.getBoundingClientRect();
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const targetTop = rect.top + scrollY - headerH - 8;
+
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Continuously update on scroll
+    window.addEventListener('scroll', () => {
+      syncMobileActive();
+    }, { passive: true });
+
+    // Initial sync
+    syncMobileActive();
   }
 
   // Celestial Star Navigation Engine:
@@ -121,6 +220,7 @@
     let navMetrics = [];
     function refreshNavMetrics() {
       const pillRect = pillNav.getBoundingClientRect();
+      if (pillRect.width === 0) return;
       navMetrics = navLinks.map(link => {
         const r = link.getBoundingClientRect();
         return {
@@ -133,7 +233,10 @@
       });
     }
     refreshNavMetrics();
-    window.addEventListener('resize', refreshNavMetrics, { passive: true });
+    window.addEventListener('resize', () => {
+      refreshNavMetrics();
+      updateStarFromScroll();
+    }, { passive: true });
 
     // Cache section top offsets in page
     // Cache section boundaries using true absolute document coordinates
@@ -236,7 +339,9 @@
       const currentH = metricCurrent.height + (metricNext.height - metricCurrent.height) * forwardGlide;
       const currentY = metricCurrent.top;
 
-      applyTrackerPosition(currentX, currentW, currentH, currentY, false);
+      if (navMetrics.length && navMetrics[0].width > 0) {
+        applyTrackerPosition(currentX, currentW, currentH, currentY, false);
+      }
 
       // 3. Mark the active navigation link strictly
       navLinks.forEach((link, idx) => {
@@ -246,6 +351,11 @@
           link.classList.remove('active');
         }
       });
+
+      // 4. Synchronize mobile navigation star and active section tag
+      if (typeof window.__syncMobileNav === 'function') {
+        window.__syncMobileNav(sectionIds[activeIndex]);
+      }
     }
 
     // Initialize initial position on load
@@ -449,17 +559,6 @@
         triggerCirclingStarFall('#hero', homeLink);
       });
     }
-
-    // Mobile drawer links
-    document.querySelectorAll('.mobile-drawer-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = link.getAttribute('href');
-        const correspondingLink = document.querySelector(`.pill-nav-link[href="${href}"]`);
-        triggerCirclingStarFall(href, correspondingLink || navLinks[0]);
-        document.getElementById('mobileDrawer')?.classList.remove('open');
-      });
-    });
 
     // Programming Languages & Tech Shower Easter Egg ("SYS.USER" Multi-Tap)
     const userTelemetry = document.getElementById('telemetryUser') || document.querySelector('.hero-telemetry-corner.telemetry-right');
