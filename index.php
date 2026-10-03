@@ -40,8 +40,8 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Stylesheet with Cache Buster -->
+  <link rel="stylesheet" href="styles.css?v=20261004_star">
   <!-- Devicon Developer Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -92,27 +92,25 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
 
     <!-- Mobile Drawer -->
     <div class="mobile-menu-drawer" id="mobileDrawer">
-      <div class="mobile-drawer-inner" id="mobileDrawerInner">
-        <!-- Floating Celestial Star Tracker for Phone -->
-        <div class="mobile-star-tracker" id="mobileStarTracker" aria-hidden="true">
-          <div class="mobile-orbit-star" id="mobileOrbitStar">
-            <svg class="star-svg-icon" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" />
-            </svg>
-            <span class="star-aura-glow"></span>
-          </div>
+      <!-- Floating Celestial Star Tracker for Phone -->
+      <div class="mobile-star-tracker" id="mobileStarTracker" aria-hidden="true">
+        <div class="mobile-orbit-star" id="mobileOrbitStar">
+          <svg class="star-svg-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" />
+          </svg>
+          <span class="star-aura-glow"></span>
         </div>
-
-        <a href="#hero" class="mobile-drawer-link active">Home</a>
-        <a href="#about" class="mobile-drawer-link">About</a>
-        <a href="#projects" class="mobile-drawer-link">Projects</a>
-        <a href="#ecosystem" class="mobile-drawer-link">Tech Stack</a>
-        <a href="#certifications" class="mobile-drawer-link">Certifications</a>
-        <a href="#resume" class="mobile-drawer-link" style="font-weight: 700; color: #38bdf8;">★ Official ATS Resume</a>
       </div>
 
-      <div style="margin-top: 15px;">
-        <a href="TOLENTINO_CV.pdf" download="TOLENTINO_CV.pdf" class="btn btn-primary" id="btnMobilePrint" style="width: 100%; text-decoration: none;">Download TOLENTINO_CV.pdf</a>
+      <a href="#hero" class="mobile-drawer-link active" style="display: block; width: 100%; box-sizing: border-box;">Home</a>
+      <a href="#about" class="mobile-drawer-link" style="display: block; width: 100%; box-sizing: border-box;">About</a>
+      <a href="#projects" class="mobile-drawer-link" style="display: block; width: 100%; box-sizing: border-box;">Projects</a>
+      <a href="#ecosystem" class="mobile-drawer-link" style="display: block; width: 100%; box-sizing: border-box;">Tech Stack</a>
+      <a href="#certifications" class="mobile-drawer-link" style="display: block; width: 100%; box-sizing: border-box;">Certifications</a>
+      <a href="#resume" class="mobile-drawer-link" style="display: block; width: 100%; box-sizing: border-box; font-weight: 700; color: #38bdf8;">★ Official ATS Resume</a>
+
+      <div style="margin-top: 15px; width: 100%; display: block;">
+        <a href="TOLENTINO_CV.pdf" download="TOLENTINO_CV.pdf" class="btn btn-primary" id="btnMobilePrint" style="width: 100%; text-decoration: none; display: block; text-align: center;">Download TOLENTINO_CV.pdf</a>
       </div>
     </div>
   </header>
@@ -863,7 +861,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
     <span id="toastMessage">Ready</span>
   </div>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <!-- Scripts with Cache Buster -->
+  <script src="script.js?v=20261004_star"></script>
 </body>
 </html>

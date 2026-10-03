@@ -671,7 +671,7 @@ img {
   background: rgba(15, 18, 26, 0.97);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 20px;
   flex-direction: column;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -680,23 +680,19 @@ img {
 }
 
 .mobile-menu-drawer.open {
-  display: flex;
-}
-
-.mobile-drawer-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .mobile-drawer-link {
   position: relative;
-  display: flex;
-  align-items: center;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
   font-size: 1rem;
   font-weight: 600;
   color: #cbd5e1;
-  padding: 12px 14px;
+  padding: 13px 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
   z-index: 2;
@@ -715,8 +711,8 @@ img {
 .mobile-star-tracker {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
   height: 48px;
   border-radius: var(--radius-sm);
   background: rgba(56, 189, 248, 0.12);
@@ -724,7 +720,7 @@ img {
   box-shadow: 0 0 24px rgba(56, 189, 248, 0.35), inset 0 0 12px rgba(56, 189, 248, 0.18);
   pointer-events: none;
   z-index: 1;
-  transition: transform 0.38s cubic-bezier(0.2, 0.9, 0.25, 1),
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.25, 1),
               height 0.35s cubic-bezier(0.2, 0.9, 0.25, 1),
               opacity 0.25s ease;
   opacity: 1;
