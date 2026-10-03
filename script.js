@@ -20,17 +20,19 @@
     }, 2800);
   }
 
-  // Handle PDF Export
-  function triggerPrint() {
-    showToast('Preparing ATS-Compliant 1-Page Resume for Print/PDF...');
-    const sheet = document.getElementById('printablePaperSheet');
-    if (sheet) {
-      sheet.scrollIntoView({ behavior: 'smooth' });
+  // Handle Official PDF Download
+  function triggerPrint(e) {
+    showToast('Downloading official ATS CV (TOLENTINO_CV.pdf)...');
+    const target = e?.currentTarget || e?.target;
+    if (!target || !target.getAttribute || !target.getAttribute('download')) {
+      if (e && e.preventDefault) e.preventDefault();
+      const a = document.createElement('a');
+      a.href = 'TOLENTINO_CV.pdf';
+      a.download = 'TOLENTINO_CV.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
     }
-
-    setTimeout(() => {
-      window.print();
-    }, 300);
   }
 
   // Floating Pill Nav - Handled with continuous interpolation inside setupCelestialStarNav
