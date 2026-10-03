@@ -41,7 +41,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   
   <!-- Stylesheet with Cache Buster -->
-  <link rel="stylesheet" href="styles.css?v=20261004_v3">
+  <link rel="stylesheet" href="styles.css?v=20261004_v4">
   <!-- Devicon Developer Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -659,7 +659,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
         
         <div class="viewer-toolbar">
           <span class="viewer-label">Document: TOLENTINO_CV.pdf (Official ATS 1-Page CV)</span>
-          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <div class="viewer-toolbar-actions" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
             <a href="TOLENTINO_CV.pdf" target="_blank" rel="noopener" class="btn btn-secondary" style="border-radius: var(--radius-pill); font-size: 0.85rem; padding: 9px 16px; text-decoration: none;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               View PDF
