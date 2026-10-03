@@ -109,7 +109,7 @@
     const navLinks = Array.from(document.querySelectorAll('.pill-nav-link'));
     if (!tracker || !orbitStar || !pillNav || !navLinks.length) return;
 
-    const sectionIds = ['hero', 'about', 'projects', 'ecosystem', 'resume'];
+    const sectionIds = ['hero', 'about', 'projects', 'ecosystem', 'certifications', 'resume'];
     let orbitAngle = 0;
     let isClickTransporting = false;
     let scrollStopTimer = null;
@@ -1176,6 +1176,7 @@
       .laptop-device-frame,
       .ecosystem-card,
       .cert-card,
+      .cert-showcase-card,
       .section-title-wrap,
       .footer-cta-container,
       .resume-viewer-wrap
@@ -1363,6 +1364,88 @@
     }, { passive: true });
   }
 
+  // Certificate Lightbox and Verification ID Copy Controller
+  function setupCertificateModal() {
+    const lightbox = document.getElementById('certLightbox');
+    const lightboxImg = document.getElementById('certLightboxImg');
+    const lightboxTitle = document.getElementById('certLightboxTitle');
+    const lightboxMeta = document.getElementById('certLightboxMeta');
+    const lightboxPdfLink = document.getElementById('certLightboxPdfLink');
+    const closeBtn = document.getElementById('certLightboxClose');
+
+    if (!lightbox) return;
+
+    function openLightbox(imgSrc, titleText, metaText, pdfHref) {
+      if (lightboxImg) lightboxImg.src = imgSrc;
+      if (lightboxTitle) lightboxTitle.textContent = titleText || 'Certificate Preview';
+      if (lightboxMeta) lightboxMeta.textContent = metaText || '';
+      if (lightboxPdfLink) {
+        if (pdfHref) {
+          lightboxPdfLink.href = pdfHref;
+          lightboxPdfLink.style.display = 'inline-flex';
+        } else {
+          lightboxPdfLink.style.display = 'none';
+        }
+      }
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-is-open');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-is-open');
+    }
+
+    document.querySelectorAll('[data-cert-preview]').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const imgSrc = trigger.dataset.certPreview;
+        const titleText = trigger.dataset.certTitle;
+        const metaText = trigger.dataset.certMeta;
+        const pdfHref = trigger.dataset.certPdf;
+        openLightbox(imgSrc, titleText, metaText, pdfHref);
+      });
+    });
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('cert-lightbox-backdrop')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+
+    // One-click copy credential code with visual confirmation
+    document.querySelectorAll('.btn-copy-cred').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const code = btn.dataset.code;
+        if (!code) return;
+        navigator.clipboard.writeText(code).then(() => {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '✓ Copied!';
+          btn.style.color = '#10b981';
+          btn.style.borderColor = '#10b981';
+          showToast(`Credential ID ${code} copied to clipboard!`);
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.color = '';
+            btn.style.borderColor = '';
+          }, 2000);
+        }).catch(() => {
+          showToast(`Credential ID: ${code}`);
+        });
+      });
+    });
+  }
+
   // Initialize all systems
   function init() {
     // Print triggers
@@ -1381,6 +1464,7 @@
     setupInteractiveTilt();
     setupProjectInteractions();
     setupEcosystemModal();
+    setupCertificateModal();
     setupHeroParallax();
   }
 

@@ -64,6 +64,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
         <li><a href="#about" class="pill-nav-link"><span class="pill-nav-text">About</span></a></li>
         <li><a href="#projects" class="pill-nav-link"><span class="pill-nav-text">Projects</span></a></li>
         <li><a href="#ecosystem" class="pill-nav-link"><span class="pill-nav-text">Tech Stack</span></a></li>
+        <li><a href="#certifications" class="pill-nav-link"><span class="pill-nav-text">Certifications</span></a></li>
         <li><a href="#resume" class="pill-nav-link pill-resume-highlight"><span class="pill-nav-text">Resume</span></a></li>
       </ul>
 
@@ -95,6 +96,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
       <a href="#about" class="mobile-drawer-link">About</a>
       <a href="#projects" class="mobile-drawer-link">Projects</a>
       <a href="#ecosystem" class="mobile-drawer-link">Tech Stack</a>
+      <a href="#certifications" class="mobile-drawer-link">Certifications</a>
       <a href="#resume" class="mobile-drawer-link" style="font-weight: 700; color: #38bdf8;">★ Official ATS Resume</a>
       <div style="margin-top: 15px;">
         <button type="button" class="btn btn-primary" id="btnMobilePrint" style="width: 100%;">Print / Save PDF (A4)</button>
@@ -508,6 +510,147 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
 
 
     <!-- ==========================================================================
+         Professional Certifications Showcase Section
+         ========================================================================== -->
+    <section class="editorial-section" id="certifications">
+      <div class="section-title-wrap">
+        <span class="section-mono-kicker">CREDENTIALS.VERIFIED</span>
+        <h2 class="editorial-serif-heading">Professional <span class="editorial-italic">Certifications</span></h2>
+        <p class="section-subtitle-text">
+          Industry-standard credentials issued by Certiport (Pearson VUE) validating computer literacy, digital safety, and enterprise networking architecture.
+        </p>
+      </div>
+
+      <div class="certifications-editorial-grid">
+        
+        <!-- Certificate 1: IC3 GS6 Level 1 -->
+        <article class="cert-showcase-card">
+          <div class="cert-preview-frame" data-cert-preview="cert_ic3_preview.png" data-cert-title="IC3 Digital Literacy Certification — Global Standard Six (Level 1)" data-cert-meta="Certiport (A Pearson VUE Business) • Issue Date: November 14, 2024 • ID: wAmNX-2FLL" data-cert-pdf="CERTI.pdf" title="Click to view full certificate">
+            <img src="cert_ic3_preview.png" alt="IC3 Digital Literacy Certification - Global Standard Six Level 1 Certificate" class="cert-preview-img" loading="lazy">
+            <div class="cert-preview-overlay">
+              <span class="cert-zoom-cue">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Full Certificate
+              </span>
+            </div>
+          </div>
+
+          <div class="cert-card-body">
+            <div class="cert-meta-header">
+              <span class="cert-badge-issuer">Certiport • Pearson VUE</span>
+              <span class="cert-badge-verified"><span class="verified-dot-pulse"></span> Verified Credential</span>
+            </div>
+
+            <h3 class="cert-title-editorial">IC3 Digital Literacy — GS6 Level 1</h3>
+            <div class="cert-date-validity">
+              <span>📅 Issued: November 14, 2024</span>
+              <span style="opacity: 0.4;">•</span>
+              <span>Global Standard Six</span>
+            </div>
+
+            <p class="cert-description-text">
+              Demonstrated verified mastery of Computing Fundamentals, Technology Basics, Digital Citizenship, Information Management, Content Creation, and Safety &amp; Cybersecurity.
+            </p>
+
+            <div class="cert-credential-strip">
+              <span class="cert-cred-label">Credential Verification ID</span>
+              <div class="cert-cred-code-wrap">
+                <span class="cert-cred-code">wAmNX-2FLL</span>
+                <button type="button" class="btn-copy-cred" data-code="wAmNX-2FLL" aria-label="Copy verification code wAmNX-2FLL">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="cert-competencies-grid">
+              <span class="cert-skill-pill">Technology Basics</span>
+              <span class="cert-skill-pill">Digital Citizenship</span>
+              <span class="cert-skill-pill">Cybersecurity &amp; Safety</span>
+              <span class="cert-skill-pill">Information Management</span>
+              <span class="cert-skill-pill">Content Creation</span>
+              <span class="cert-skill-pill">ACE College Credit</span>
+              <span class="cert-skill-pill">ISTE Seal (2025–2027)</span>
+            </div>
+
+            <div class="cert-action-cluster">
+              <a href="CERTI.pdf" target="_blank" rel="noopener" class="btn-cert-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                View PDF Document
+              </a>
+              <a href="https://verify.certiport.com" target="_blank" rel="noopener" class="btn-cert-secondary" title="Verify on official Certiport verification portal">
+                Verify on Certiport ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Certificate 2: IT Specialist - Networking -->
+        <article class="cert-showcase-card">
+          <div class="cert-preview-frame" data-cert-preview="cert_networking_preview.png" data-cert-title="Information Technology Specialist: Networking" data-cert-meta="Certiport (A Pearson VUE Business) / CertNexus • Awarded: October 17, 2025 • ID: wNnKq-2F9s • Valid 5 Years" data-cert-pdf="networking.pdf" title="Click to view full certificate">
+            <img src="cert_networking_preview.png" alt="IT Specialist Networking Certificate" class="cert-preview-img" loading="lazy">
+            <div class="cert-preview-overlay">
+              <span class="cert-zoom-cue">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                Zoom Full Certificate
+              </span>
+            </div>
+          </div>
+
+          <div class="cert-card-body">
+            <div class="cert-meta-header">
+              <span class="cert-badge-issuer">Certiport • CertNexus • Pearson</span>
+              <span class="cert-badge-verified"><span class="verified-dot-pulse"></span> Verified Credential</span>
+            </div>
+
+            <h3 class="cert-title-editorial">IT Specialist: Networking</h3>
+            <div class="cert-date-validity">
+              <span>📅 Awarded: October 17, 2025</span>
+              <span style="opacity: 0.4;">•</span>
+              <span>Valid 5 Years (Through 2030)</span>
+            </div>
+
+            <p class="cert-description-text">
+              Demonstrated validated proficiency in TCP/IP networking, IPv4 &amp; IPv6 subnetting, local and wide area network architectures, routing, network security protocols, and hardware troubleshooting.
+            </p>
+
+            <div class="cert-credential-strip">
+              <span class="cert-cred-label">Credential Verification ID</span>
+              <div class="cert-cred-code-wrap">
+                <span class="cert-cred-code">wNnKq-2F9s</span>
+                <button type="button" class="btn-copy-cred" data-code="wNnKq-2F9s" aria-label="Copy verification code wNnKq-2F9s">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+
+            <div class="cert-competencies-grid">
+              <span class="cert-skill-pill">TCP/IP Protocol Suite</span>
+              <span class="cert-skill-pill">IPv4 / IPv6 Subnetting</span>
+              <span class="cert-skill-pill">OSI 7-Layer Reference</span>
+              <span class="cert-skill-pill">LAN / WAN Infrastructure</span>
+              <span class="cert-skill-pill">Network Security &amp; Firewalls</span>
+              <span class="cert-skill-pill">Wired &amp; Wireless (802.11)</span>
+              <span class="cert-skill-pill">Packet Diagnostics</span>
+            </div>
+
+            <div class="cert-action-cluster">
+              <a href="networking.pdf" target="_blank" rel="noopener" class="btn-cert-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                View PDF Document
+              </a>
+              <a href="https://verify.certiport.com" target="_blank" rel="noopener" class="btn-cert-secondary" title="Verify on official Certiport verification portal">
+                Verify on Certiport ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          Official ATS 1-Page Resume (Matches TOLENTINO_CV.pdf)
          ========================================================================== -->
     <section class="editorial-section" id="resume">
@@ -638,18 +781,20 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
 
             <div class="sheet-cert-block">
               <div class="sheet-flex-row">
-                <span class="sheet-bold-title">Certiport - IC3 GS6 Level 1</span>
-                <span class="sheet-right-badge">2024</span>
+                <span class="sheet-bold-title">Certiport (Pearson VUE) — IC3 Digital Literacy GS6 Level 1</span>
+                <span class="sheet-right-badge">Nov 2024</span>
               </div>
-              <p class="sheet-cert-desc">Communicate Effectively Through Digital Channels, Create Digital Content, Fundamental Software Concepts, Identify Etiquette Standards for Collaboration, Identify Threats and Security Measures In Digital Environments, Protect Digital Reputation and Identity, Use Online Search</p>
+              <div class="sheet-meta-text">Credential ID: <strong>wAmNX-2FLL</strong> &bull; verify.certiport.com &bull; Accredited by ACE &amp; ISTE</div>
+              <p class="sheet-cert-desc">Technology Basics, Digital Citizenship, Information Management, Content Creation, Collaboration Etiquette, and Cybersecurity &amp; Safety.</p>
             </div>
 
             <div class="sheet-cert-block">
               <div class="sheet-flex-row">
-                <span class="sheet-bold-title">Certiport - IT Specialist in Networking</span>
-                <span class="sheet-right-badge">2025</span>
+                <span class="sheet-bold-title">Certiport (Pearson VUE / CertNexus) — IT Specialist in Networking</span>
+                <span class="sheet-right-badge">Oct 2025</span>
               </div>
-              <p class="sheet-cert-desc">Basic Networking Infrastructure, Internet Protocol, Local Area Networking, Network Security, OSI Model, Wide Area Networks, Wired and Wireless Networks</p>
+              <div class="sheet-meta-text">Credential ID: <strong>wNnKq-2F9s</strong> &bull; verify.certiport.com &bull; 5-Year Industry Credential (Through 2030)</div>
+              <p class="sheet-cert-desc">TCP/IP Protocol Suite, IPv4 &amp; IPv6 Addressing and Subnetting, Network Architecture (LAN/WAN), Routing &amp; Switching, OSI 7-Layer Model, Network Security, and Troubleshooting.</p>
             </div>
           </section>
 
@@ -688,6 +833,26 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
       </div>
     </div>
   </footer>
+
+  <!-- Certificate Lightbox Modal -->
+  <div class="cert-lightbox" id="certLightbox" aria-hidden="true" role="dialog" aria-labelledby="certLightboxTitle">
+    <div class="cert-lightbox-container">
+      <div class="cert-lightbox-header">
+        <h3 class="cert-lightbox-title" id="certLightboxTitle">Certificate Preview</h3>
+        <button type="button" class="cert-lightbox-close" id="certLightboxClose" aria-label="Close certificate preview">&times;</button>
+      </div>
+      <div class="cert-lightbox-body">
+        <img src="" alt="Certificate High-Resolution Preview" id="certLightboxImg" class="cert-lightbox-img">
+      </div>
+      <div class="cert-lightbox-footer">
+        <div class="cert-lightbox-meta" id="certLightboxMeta"></div>
+        <a href="#" target="_blank" rel="noopener" class="btn-cert-primary" id="certLightboxPdfLink">
+          <span>Open Full Original PDF Document</span>
+          <span class="arrow-glyph">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Toast Feedback -->
   <div class="toast" id="toastNotification">

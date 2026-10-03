@@ -146,5 +146,50 @@ const DEFAULT_RESUME_DATA = {
         "Developed a Java desktop application using NetBeans, applying core Object-Oriented Programming (OOP) concepts and CRUD application logic."
       ]
     }
+  ],
+  certifications: [
+    {
+      id: "ic3-gs6",
+      title: "IC3 Digital Literacy Certification (Global Standard Six - Level 1)",
+      issuer: "Certiport (A Pearson VUE Business)",
+      year: "2024",
+      issueDate: "November 14, 2024",
+      credentialId: "wAmNX-2FLL",
+      verificationUrl: "https://verify.certiport.com",
+      pdfFile: "CERTI.pdf",
+      previewImage: "cert_ic3_preview.png",
+      standards: ["ACE", "ISTE Seal (2025-2027)", "DigComp", "Global Digital Literacy Council"],
+      description: "Demonstrated comprehensive proficiency in Technology Basics, Digital Citizenship, Information Management, Content Creation, Digital Communication, Collaboration, and Safety & Security through the successful completion of the IC3 Digital Literacy exam.",
+      competencies: [
+        "Technology Basics & Computing Hardware/Software",
+        "Digital Citizenship & Online Reputation Protection",
+        "Information Management & Advanced Search",
+        "Digital Content Creation & Media",
+        "Communication & Collaborative Etiquette",
+        "Cybersecurity, Privacy & Threat Prevention"
+      ]
+    },
+    {
+      id: "its-networking",
+      title: "Information Technology Specialist: Networking",
+      issuer: "Certiport (A Pearson VUE Business) / CertNexus",
+      year: "2025",
+      issueDate: "October 17, 2025",
+      validity: "Valid through October 2030 (5-Year Expiration)",
+      credentialId: "wNnKq-2F9s",
+      verificationUrl: "https://verify.certiport.com",
+      pdfFile: "networking.pdf",
+      previewImage: "cert_networking_preview.png",
+      standards: ["Pearson VUE", "CertNexus", "ITS"],
+      description: "Successfully completed certification requirements for IT Specialist in Networking, validating network infrastructure, architecture, protocols, troubleshooting, and security principles.",
+      competencies: [
+        "Network Infrastructure & Topologies (LAN / WAN)",
+        "Internet Protocol (IPv4 / IPv6) Addressing & Subnetting",
+        "OSI 7-Layer Reference Model & TCP/IP Protocol Suite",
+        "Network Security Protocols, Firewalls & Encryption",
+        "Wired (Ethernet) & Wireless (802.11) Network Operations",
+        "Network Diagnostics, Troubleshooting & Packet Analysis"
+      ]
+    }
   ]
 };
