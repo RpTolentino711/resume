@@ -1,0 +1,100 @@
+{
+  "basics": {
+    "name": "Romeo Paolo L. Tolentino",
+    "label": "Fourth-Year BSIT Student | Aspiring Software Developer & IT Intern",
+    "sublabel": "National University — College of Computing and Information Technology",
+    "targetPosition": "IT Intern / Software Developer Intern / IT OJT",
+    "tagline": "C# • Java/Kotlin • PHP • JavaScript • .NET MAUI • Android • MySQL • REST APIs • LLM APIs",
+    "email": "romeopaolotolentino@gmail.com",
+    "phone": "+63 9668257301",
+    "location": "Batangas, Philippines",
+    "website": "https://romeopaolotolentino.dev",
+    "github": "https://github.com/RpTolentino711",
+    "facebook": "https://www.facebook.com/romeo.tolentino.753612",
+    "linkedin": "https://linkedin.com/in/romeopaolotolentino",
+    "avatar": "profile.jfif",
+    "showAvatar": false,
+    "summary": "Information Technology student specializing in mobile and web application development, with practical experience in software development, UI/UX design, database-driven systems, artificial intelligence, and API integration. Experienced in developing academic and capstone applications using .NET MAUI, Flutter, PHP, Laravel, MySQL, and SQLite. Skilled in developing and training machine learning models using Random Forest, integrating Large Language Models (LLMs) and AI APIs, and implementing AI-assisted features into software applications. Proficient in translating system requirements into intuitive, user-centered interfaces and working across front-end, back-end, database, and AI components to deliver functional, reliable, and maintainable application solutions.",
+    "aboutPersonal": "I'm passionate about building responsive web and mobile applications that are intuitive and reliable. I enjoy learning new developer tools, working across front-end and back-end workflows, and taking projects from idea to functional implementation."
+  },
+  "education": [
+    {
+      "institution": "National University",
+      "degree": "Bachelor of Science in Information Technology",
+      "specialization": "Specialization in Mobile and Web Applications",
+      "period": "Expected 2027",
+      "activities": "Society of Information Technology Students"
+    }
+  ],
+  "skills": {
+    "languages": ["C#", "C++", "Java", "Kotlin", "PHP", "JavaScript", "HTML", "CSS", "SQL"],
+    "frameworksDevelopment": [".NET MAUI", "ASP.NET", "Flutter", "Laravel", "Android Development"],
+    "frontend": ["React", "Next.js", "React Native", "Expo", "Tailwind CSS", "Bootstrap", "Framer Motion"],
+    "database": ["MySQL", "SQLite", "MariaDB", "Firebase"],
+    "developerTools": ["Visual Studio Code", "Antigravity", "Git", "GitHub"],
+    "devopsCloud": ["GitHub Actions"],
+    "apisIntegration": ["REST APIs", "PayMongo API", "Groq API", "Webhooks"],
+    "aiData": ["NLP", "Random Forest", "LLM/API Integration"],
+    "designPrototyping": ["Figma"],
+    "mobileDevelopment": ["Flutter", "Dart", "C#", ".NET MAUI", "Kotlin", "Android"],
+    "webDevelopment": ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS", "React", "PHP", "Laravel"],
+    "backendDatabase": ["PHP/PDO", "MySQL", "SQLite", "Firebase"],
+    "aiApi": ["Random Forest machine learning", "LLM integration", "NLP-based features", "AI API integration", "REST API concepts"],
+    "uiUx": ["Figma", "wireframes", "user flows", "prototypes", "responsive interface design"],
+    "tools": ["Git/GitHub", "Visual Studio", "Visual Studio Code", "Android Studio", "NetBeans", "XAMPP"]
+  },
+  "projects": [
+    {
+      "id": "rentease",
+      "name": "RentEase",
+      "techStack": "C#, .NET MAUI, SQLite, PayMongo API",
+      "highlights": [
+        "Developed a cross-platform item rental application using .NET MAUI with an offline-first SQLite database.",
+        "Implemented item listing, rental management, user authentication, and role-based buyer/seller functionality.",
+        "Integrated PayMongo for secure payment processing and transaction handling."
+      ]
+    },
+    {
+      "id": "identitrack",
+      "name": "IDENTITRACK",
+      "techStack": "PHP, JavaScript, MySQL, XAMPP, NFC, FLUTTER, REST API, Groq API, Random Forest",
+      "highlights": [
+        "Developed a digital infraction and progressive offense management system for National University Lipa.",
+        "Implemented NFC-enabled student identification, offense tracking, community service monitoring, notifications, and violation letter generation.",
+        "Integrated AI-assisted offense analysis using REST APIs, NLP, Random Forest, and LLM capabilities to provide handbook-based consequence suggestions for UPCC personnel."
+      ]
+    },
+    {
+      "id": "asrt",
+      "name": "ASRT",
+      "techStack": "PHP, JavaScript, MySQL, XAMPP",
+      "highlights": [
+        "Developed a web-based system using PHP and MySQL to automate administrative processes and improve record management.",
+        "Implemented CRUD operations, database-driven workflows, authentication, and role-based system functionality.",
+        "Designed responsive interfaces and integrated backend validation for reliable data management."
+      ]
+    },
+    {
+      "id": "notiflow",
+      "name": "Notiflow",
+      "techStack": "Java, Android Studio, SQLite",
+      "highlights": [
+        "Developed an Android notification and task reminder application for professors and students.",
+        "Implemented CRUD functionality for creating and managing scheduled academic tasks and notifications.",
+        "Integrated time-based notifications and device alarms to automatically alert students when assigned tasks reach their scheduled time."
+      ]
+    }
+  ],
+  "coursesAndCertifications": [
+    {
+      "title": "Certiport - IC3 GS6 Level 1",
+      "year": "2024",
+      "description": "Communicate Effectively Through Digital Channels, Create Digital Content, Fundamental Software Concepts, Identify Etiquette Standards for Collaboration, Identify Threats and Security Measures In Digital Environments, Protect Digital Reputation and Identity, Use Online Search"
+    },
+    {
+      "title": "Certiport - IT Specialist in Networking",
+      "year": "2025",
+      "description": "Basic Networking Infrastructure, Internet Protocol, Local Area Networking, Network Security, OSI Model, Wide Area Networks, Wired and Wireless Networks"
+    }
+  ]
+}
