@@ -72,34 +72,26 @@
     window.addEventListener('scroll', updateNavigationMotion, { passive: true });
   }
 
-  // Mobile Navigation Drawer & Dynamic Star Tracker
+  // Mobile Navigation Drawer with Floating Celestial Star Tracker
   function setupMobileNav() {
     const mobileBtn = document.getElementById('btnMobileToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
+    const starTracker = document.getElementById('mobileStarTracker');
     const mobileLinks = Array.from(document.querySelectorAll('.mobile-drawer-link'));
-    const mobileTag = document.getElementById('mobileActiveTag');
     if (!mobileBtn || !mobileDrawer) return;
 
     const sectionIds = ['hero', 'about', 'projects', 'ecosystem', 'certifications', 'resume'];
-    const sectionNames = {
-      hero: 'Home',
-      about: 'About',
-      projects: 'Projects',
-      ecosystem: 'Tech Stack',
-      certifications: 'Certifications',
-      resume: 'ATS Resume'
-    };
 
-    function determineActiveSectionId() {
+    function determineActiveIndex() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollFocus = scrollY + 140;
+      const scrollFocus = scrollY + 160;
 
       // Bottom of page check
       if ((window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 60)) {
-        return 'resume';
+        return sectionIds.length - 1; // resume
       }
 
-      let activeId = 'hero';
+      let activeIdx = 0;
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const id = sectionIds[i];
         const el = document.getElementById(id);
@@ -107,30 +99,47 @@
           const rect = el.getBoundingClientRect();
           const top = rect.top + scrollY;
           if (scrollFocus >= top - 20) {
-            activeId = id;
+            activeIdx = i;
             break;
           }
         }
       }
-      return activeId;
+      return activeIdx;
     }
 
-    function syncMobileActive(activeId) {
-      const currentId = activeId || determineActiveSectionId();
-      
-      mobileLinks.forEach(link => {
-        const href = link.getAttribute('href') || '';
-        const targetId = href.replace('#', '');
-        if (targetId === currentId) {
+    function positionStarTracker(activeIdx) {
+      if (!mobileLinks.length) return;
+      const safeIdx = Math.max(0, Math.min(activeIdx, mobileLinks.length - 1));
+      const targetLink = mobileLinks[safeIdx];
+
+      mobileLinks.forEach((link, idx) => {
+        if (idx === safeIdx) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
         }
       });
 
-      if (mobileTag && sectionNames[currentId]) {
-        mobileTag.textContent = sectionNames[currentId];
+      if (starTracker && targetLink) {
+        const top = targetLink.offsetTop;
+        const height = targetLink.offsetHeight;
+        starTracker.style.transform = `translate3d(0, ${top}px, 0)`;
+        starTracker.style.height = `${height}px`;
+        starTracker.style.opacity = '1';
       }
+    }
+
+    function syncMobileActive(override = null) {
+      let activeIdx = 0;
+      if (typeof override === 'number') {
+        activeIdx = override;
+      } else if (typeof override === 'string') {
+        const found = sectionIds.indexOf(override.replace('#', ''));
+        activeIdx = found >= 0 ? found : determineActiveIndex();
+      } else {
+        activeIdx = determineActiveIndex();
+      }
+      positionStarTracker(activeIdx);
     }
 
     window.__syncMobileNav = syncMobileActive;
@@ -140,7 +149,9 @@
       e.stopPropagation();
       const isOpen = mobileDrawer.classList.toggle('open');
       if (isOpen) {
-        syncMobileActive();
+        requestAnimationFrame(() => {
+          syncMobileActive();
+        });
       }
     });
 
@@ -151,28 +162,26 @@
       }
     });
 
-    // Prevent tap inside drawer from bubbling to document click
+    // Prevent taps inside drawer from bubbling
     mobileDrawer.addEventListener('click', (e) => {
       e.stopPropagation();
     });
 
-    // Reliable tap navigation for each drawer link
-    mobileLinks.forEach(link => {
+    // Handle clicks on mobile links
+    mobileLinks.forEach((link, idx) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const href = link.getAttribute('href');
         if (!href || !href.startsWith('#')) return;
 
-        const targetId = href.substring(1);
-        const targetEl = document.getElementById(targetId);
-
-        // Immediate visual star and tag update
-        syncMobileActive(targetId);
+        // Immediately position floating star to clicked item
+        positionStarTracker(idx);
 
         // Close drawer
         mobileDrawer.classList.remove('open');
 
-        // Smooth scroll with precise sticky header offset
+        // Smooth scroll to target section
+        const targetEl = document.querySelector(href);
         if (targetEl) {
           const header = document.querySelector('.editorial-header');
           const headerH = header ? header.offsetHeight : 64;
@@ -188,13 +197,13 @@
       });
     });
 
-    // Continuously update on scroll
+    // Continuously update floating star as user scrolls on phone
     window.addEventListener('scroll', () => {
       syncMobileActive();
     }, { passive: true });
 
     // Initial sync
-    syncMobileActive();
+    setTimeout(syncMobileActive, 100);
   }
 
   // Celestial Star Navigation Engine:

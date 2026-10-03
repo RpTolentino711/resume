@@ -62,38 +62,27 @@
     </div>
 
     <!-- Mobile Drawer -->
-    <div class="mobile-menu-drawer" id="mobileDrawer" role="dialog" aria-label="Mobile Navigation">
-      <div class="mobile-drawer-header">
-        <span class="mobile-drawer-kicker"><span class="mobile-location-dot"></span> CURRENT SECTION</span>
-        <span class="mobile-drawer-active-tag" id="mobileActiveTag">Home</span>
+    <div class="mobile-menu-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-inner" id="mobileDrawerInner">
+        <!-- Floating Celestial Star Tracker for Phone -->
+        <div class="mobile-star-tracker" id="mobileStarTracker" aria-hidden="true">
+          <div class="mobile-orbit-star" id="mobileOrbitStar">
+            <svg class="star-svg-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" />
+            </svg>
+            <span class="star-aura-glow"></span>
+          </div>
+        </div>
+
+        <a href="#hero" class="mobile-drawer-link active">Home</a>
+        <a href="#about" class="mobile-drawer-link">About</a>
+        <a href="#projects" class="mobile-drawer-link">Projects</a>
+        <a href="#ecosystem" class="mobile-drawer-link">Tech Stack</a>
+        <a href="#certifications" class="mobile-drawer-link">Certifications</a>
+        <a href="#resume" class="mobile-drawer-link" style="font-weight: 700; color: #38bdf8;">★ Official ATS Resume</a>
       </div>
-      <nav class="mobile-drawer-nav">
-        <a href="#hero" class="mobile-drawer-link active" data-section="hero">
-          <span class="mobile-link-text">Home</span>
-          <span class="mobile-link-star" aria-hidden="true">★</span>
-        </a>
-        <a href="#about" class="mobile-drawer-link" data-section="about">
-          <span class="mobile-link-text">About</span>
-          <span class="mobile-link-star" aria-hidden="true">★</span>
-        </a>
-        <a href="#projects" class="mobile-drawer-link" data-section="projects">
-          <span class="mobile-link-text">Projects</span>
-          <span class="mobile-link-star" aria-hidden="true">★</span>
-        </a>
-        <a href="#ecosystem" class="mobile-drawer-link" data-section="ecosystem">
-          <span class="mobile-link-text">Tech Stack</span>
-          <span class="mobile-link-star" aria-hidden="true">★</span>
-        </a>
-        <a href="#certifications" class="mobile-drawer-link" data-section="certifications">
-          <span class="mobile-link-text">Certifications</span>
-          <span class="mobile-link-star" aria-hidden="true">★</span>
-        </a>
-        <a href="#resume" class="mobile-drawer-link" data-section="resume">
-          <span class="mobile-link-text">Official ATS Resume</span>
-          <span class="mobile-link-star" aria-hidden="true">★</span>
-        </a>
-      </nav>
-      <div style="margin-top: 10px;">
+
+      <div style="margin-top: 15px;">
         <a href="TOLENTINO_CV.pdf" download="TOLENTINO_CV.pdf" class="btn btn-primary" id="btnMobilePrint" style="width: 100%; text-decoration: none;">Download TOLENTINO_CV.pdf</a>
       </div>
     </div>

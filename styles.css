@@ -665,136 +665,101 @@ img {
 .mobile-menu-drawer {
   display: none;
   position: fixed;
-  top: 68px;
-  left: 16px;
-  right: 16px;
-  background: rgba(13, 17, 26, 0.97);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  top: 72px;
+  left: 20px;
+  right: 20px;
+  background: rgba(15, 18, 26, 0.97);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
-  padding: 16px;
+  padding: 24px;
   flex-direction: column;
-  gap: 8px;
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 1px 1px rgba(56, 189, 248, 0.15);
-  z-index: 1000;
-  animation: mobileDrawerFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes mobileDrawerFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+  z-index: 999;
 }
 
 .mobile-menu-drawer.open {
   display: flex;
 }
 
-.mobile-drawer-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 6px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 2px;
-}
-
-.mobile-drawer-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-.mobile-location-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
-  animation: pulseLocationDot 1.8s infinite;
-}
-
-@keyframes pulseLocationDot {
-  0%, 100% { opacity: 0.5; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.3); }
-}
-
-.mobile-drawer-active-tag {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  font-weight: 600;
-}
-
-.mobile-drawer-nav {
+.mobile-drawer-inner {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3px;
 }
 
 .mobile-drawer-link {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 0.98rem;
-  font-weight: 500;
-  color: #94a3b8;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
-  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
-  background: transparent;
-  border: 1px solid transparent;
+  z-index: 2;
+  transition: color 0.25s ease;
 }
 
-.mobile-drawer-link:hover,
-.mobile-drawer-link:focus-visible {
-  background: rgba(255, 255, 255, 0.04);
-  color: #f1f5f9;
+.mobile-drawer-link:last-of-type {
+  border-bottom: none;
 }
 
 .mobile-drawer-link.active {
   color: #ffffff;
-  font-weight: 600;
+}
+
+/* Mobile Floating Star Tracker Capsule (Frames active item, identical to desktop) */
+.mobile-star-tracker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  border-radius: var(--radius-sm);
   background: rgba(56, 189, 248, 0.12);
-  border-color: rgba(56, 189, 248, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.35), inset 0 0 12px rgba(56, 189, 248, 0.18);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.38s cubic-bezier(0.2, 0.9, 0.25, 1),
+              height 0.35s cubic-bezier(0.2, 0.9, 0.25, 1),
+              opacity 0.25s ease;
+  opacity: 1;
 }
 
-.mobile-drawer-link.active .mobile-link-text {
-  color: #38bdf8;
-  font-weight: 700;
-}
-
-.mobile-link-star {
-  display: inline-flex;
+/* Mobile Floating Celestial Star (identical to desktop nav-orbit-star) */
+.mobile-orbit-star {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
-  color: #38bdf8;
-  opacity: 0;
-  transform: scale(0.4) rotate(-30deg);
-  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 0 6px #38bdf8) drop-shadow(0 0 12px rgba(255, 255, 255, 0.95));
 }
 
-.mobile-drawer-link.active .mobile-link-star {
-  opacity: 1;
-  transform: scale(1) rotate(0deg);
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.9), 0 0 20px rgba(56, 189, 248, 0.5);
+.mobile-orbit-star .star-svg-icon {
+  width: 18px;
+  height: 18px;
+  animation: starCosmicSpin 8s linear infinite;
+  filter: drop-shadow(0 0 4px #ffffff);
+}
+
+.mobile-orbit-star .star-aura-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.65) 0%, rgba(255, 255, 255, 0.4) 35%, transparent 70%);
+  animation: starPulseGlow 1.8s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 /* ==========================================================================
