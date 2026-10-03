@@ -1376,6 +1376,8 @@
     if (!lightbox) return;
 
     function openLightbox(imgSrc, titleText, metaText, pdfHref) {
+      const scrollBody = lightbox.querySelector('.cert-lightbox-body');
+      if (scrollBody) scrollBody.scrollTop = 0;
       if (lightboxImg) lightboxImg.src = imgSrc;
       if (lightboxTitle) lightboxTitle.textContent = titleText || 'Certificate Preview';
       if (lightboxMeta) lightboxMeta.textContent = metaText || '';

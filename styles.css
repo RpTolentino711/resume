@@ -2022,25 +2022,29 @@ img {
 .cert-preview-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10.5;
-  background: #090c13;
+  aspect-ratio: 16 / 11;
+  background: #06090e;
   overflow: hidden;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
 }
 
 .cert-preview-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-  filter: brightness(0.96) contrast(1.02);
+  object-fit: contain;
+  object-position: center center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  filter: brightness(0.97);
 }
 
 .cert-preview-frame:hover .cert-preview-img {
-  transform: scale(1.035);
-  filter: brightness(1.02) contrast(1.05);
+  transform: scale(1.02);
+  filter: brightness(1.02);
 }
 
 .cert-preview-overlay {
@@ -2335,16 +2339,16 @@ img {
 
 .cert-lightbox-container {
   position: relative;
-  max-width: 1040px;
-  width: 100%;
-  max-height: 92vh;
+  max-width: 1080px;
+  width: 95vw;
+  max-height: 94vh;
   display: flex;
   flex-direction: column;
-  background: rgba(15, 20, 31, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 20, 31, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 50px rgba(56, 189, 248, 0.15);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(56, 189, 248, 0.15);
   transform: scale(0.95);
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -2357,9 +2361,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 14, 23, 0.6);
+  padding: 14px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 14, 23, 0.85);
+  flex-shrink: 0;
 }
 
 .cert-lightbox-title {
@@ -2393,31 +2398,39 @@ img {
 }
 
 .cert-lightbox-body {
-  overflow: auto;
-  max-height: calc(92vh - 140px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(92vh - 130px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 16px;
-  background: #06090e;
+  padding: 24px 20px;
+  background: #04070c;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cert-lightbox-img {
   max-width: 100%;
+  max-height: calc(85vh - 140px);
+  width: auto;
   height: auto;
+  object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.75);
+  display: block;
+  margin: 0 auto;
 }
 
 .cert-lightbox-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 14, 23, 0.6);
+  padding: 14px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 14, 23, 0.85);
   flex-wrap: wrap;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .cert-lightbox-meta {
