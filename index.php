@@ -578,9 +578,6 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 View PDF Document
               </a>
-              <a href="https://verify.certiport.com" target="_blank" rel="noopener" class="btn-cert-secondary" title="Verify on official Certiport verification portal">
-                Verify on Certiport ↗
-              </a>
             </div>
           </div>
         </article>
@@ -639,9 +636,6 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
               <a href="networking.pdf" target="_blank" rel="noopener" class="btn-cert-primary">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                 View PDF Document
-              </a>
-              <a href="https://verify.certiport.com" target="_blank" rel="noopener" class="btn-cert-secondary" title="Verify on official Certiport verification portal">
-                Verify on Certiport ↗
               </a>
             </div>
           </div>
@@ -784,7 +778,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
                 <span class="sheet-bold-title">Certiport (Pearson VUE) — IC3 Digital Literacy GS6 Level 1</span>
                 <span class="sheet-right-badge">Nov 2024</span>
               </div>
-              <div class="sheet-meta-text">Credential ID: <strong>wAmNX-2FLL</strong> &bull; verify.certiport.com &bull; Accredited by ACE &amp; ISTE</div>
+              <div class="sheet-meta-text">Credential ID: <strong>wAmNX-2FLL</strong> &bull; Accredited by ACE &amp; ISTE</div>
               <p class="sheet-cert-desc">Technology Basics, Digital Citizenship, Information Management, Content Creation, Collaboration Etiquette, and Cybersecurity &amp; Safety.</p>
             </div>
 
@@ -793,7 +787,7 @@ $linkedin = htmlspecialchars($basics['linkedin'] ?? 'https://linkedin.com/in/rom
                 <span class="sheet-bold-title">Certiport (Pearson VUE / CertNexus) — IT Specialist in Networking</span>
                 <span class="sheet-right-badge">Oct 2025</span>
               </div>
-              <div class="sheet-meta-text">Credential ID: <strong>wNnKq-2F9s</strong> &bull; verify.certiport.com &bull; 5-Year Industry Credential (Through 2030)</div>
+              <div class="sheet-meta-text">Credential ID: <strong>wNnKq-2F9s</strong> &bull; 5-Year Industry Credential (Through 2030)</div>
               <p class="sheet-cert-desc">TCP/IP Protocol Suite, IPv4 &amp; IPv6 Addressing and Subnetting, Network Architecture (LAN/WAN), Routing &amp; Switching, OSI 7-Layer Model, Network Security, and Troubleshooting.</p>
             </div>
           </section>
