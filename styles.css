@@ -758,6 +758,26 @@ img {
   pointer-events: none;
 }
 
+/* Mobile Aggressive Orbit Mode (when user taps the item they are ALREADY viewing) */
+.mobile-orbit-star.aggressive-orbit {
+  filter: drop-shadow(0 0 14px #38bdf8) drop-shadow(0 0 25px #ffffff) drop-shadow(0 0 45px #0284c7) !important;
+}
+
+.mobile-orbit-star.aggressive-orbit .star-svg-icon {
+  animation: aggressiveStarSpin 0.22s linear infinite !important;
+}
+
+.mobile-orbit-star.aggressive-orbit .star-aura-glow {
+  opacity: 1 !important;
+  transform: scale(2.2) !important;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.95) 0%, rgba(255, 255, 255, 0.9) 45%, transparent 75%) !important;
+}
+
+.mobile-star-tracker.aggressive-orbit {
+  border-color: rgba(56, 189, 248, 0.95) !important;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.8), inset 0 0 18px rgba(56, 189, 248, 0.5) !important;
+}
+
 /* ==========================================================================
    Hero Section (Image 1 replica: Monochromatic Fluid Smoke)
    ========================================================================== */

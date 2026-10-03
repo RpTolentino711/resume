@@ -77,10 +77,13 @@
     const mobileBtn = document.getElementById('btnMobileToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const starTracker = document.getElementById('mobileStarTracker');
+    const orbitStar = document.getElementById('mobileOrbitStar');
     const mobileLinks = Array.from(document.querySelectorAll('.mobile-drawer-link'));
     if (!mobileBtn || !mobileDrawer) return;
 
     const sectionIds = ['hero', 'about', 'projects', 'ecosystem', 'certifications', 'resume'];
+    let currentMobileActiveIdx = 0;
+    let isMobileSpinning = false;
 
     function determineActiveIndex() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -107,13 +110,47 @@
       return activeIdx;
     }
 
+    function triggerMobileAggressiveSpin() {
+      if (isMobileSpinning) return;
+      isMobileSpinning = true;
+
+      if (orbitStar) orbitStar.classList.add('aggressive-orbit');
+      if (starTracker) starTracker.classList.add('aggressive-orbit');
+
+      // Sparkle bursts
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+          if (!orbitStar) return;
+          const rect = orbitStar.getBoundingClientRect();
+          const sx = rect.left + rect.width / 2;
+          const sy = rect.top + rect.height / 2;
+          const spark = document.createElement('div');
+          spark.className = 'falling-star-sparkle';
+          spark.style.left = sx + 'px';
+          spark.style.top = sy + 'px';
+          const a = Math.random() * Math.PI * 2;
+          const d = 14 + Math.random() * 24;
+          spark.style.setProperty('--tx', `${Math.cos(a) * d}px`);
+          spark.style.setProperty('--ty', `${Math.sin(a) * d}px`);
+          document.body.appendChild(spark);
+          setTimeout(() => spark.remove(), 550);
+        }, i * 65);
+      }
+
+      setTimeout(() => {
+        if (orbitStar) orbitStar.classList.remove('aggressive-orbit');
+        if (starTracker) starTracker.classList.remove('aggressive-orbit');
+        isMobileSpinning = false;
+      }, 1200);
+    }
+
     function positionStarTracker(activeIdx) {
       if (!mobileLinks.length) return;
-      const safeIdx = Math.max(0, Math.min(activeIdx, mobileLinks.length - 1));
-      const targetLink = mobileLinks[safeIdx];
+      currentMobileActiveIdx = Math.max(0, Math.min(activeIdx, mobileLinks.length - 1));
+      const targetLink = mobileLinks[currentMobileActiveIdx];
 
       mobileLinks.forEach((link, idx) => {
-        if (idx === safeIdx) {
+        if (idx === currentMobileActiveIdx) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
@@ -149,9 +186,9 @@
       e.stopPropagation();
       const isOpen = mobileDrawer.classList.toggle('open');
       if (isOpen) {
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           syncMobileActive();
-        });
+        }, 30);
       }
     });
 
@@ -174,26 +211,47 @@
         const href = link.getAttribute('href');
         if (!href || !href.startsWith('#')) return;
 
-        // Immediately position floating star to clicked item
+        // Check if user is ALREADY at this section:
+        const isAlreadyHere = (idx === currentMobileActiveIdx) || link.classList.contains('active');
+
+        if (isAlreadyHere) {
+          // If clicked again while at the content -> the star spins furiously!
+          triggerMobileAggressiveSpin();
+          return;
+        }
+
+        // Move floating star tracker immediately to the clicked item
         positionStarTracker(idx);
 
-        // Close drawer
-        mobileDrawer.classList.remove('open');
-
-        // Smooth scroll to target section
         const targetEl = document.querySelector(href);
         if (targetEl) {
           const header = document.querySelector('.editorial-header');
           const headerH = header ? header.offsetHeight : 64;
           const rect = targetEl.getBoundingClientRect();
           const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-          const targetTop = rect.top + scrollY - headerH - 8;
+          const targetTop = Math.max(0, rect.top + scrollY - headerH - 8);
 
-          window.scrollTo({
-            top: Math.max(0, targetTop),
-            behavior: 'smooth'
-          });
+          // Scroll immediately
+          try {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } catch (err) {
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+          }
+
+          // Fallback scroll
+          setTimeout(() => {
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
+          }, 60);
+
+          if (history.pushState) {
+            history.pushState(null, '', href);
+          }
         }
+
+        // Close drawer after short moment so scroll begins smoothly
+        setTimeout(() => {
+          mobileDrawer.classList.remove('open');
+        }, 180);
       });
     });
 
