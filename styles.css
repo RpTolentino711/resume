@@ -676,7 +676,10 @@ img {
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
-  z-index: 999;
+  z-index: 10001 !important;
+  pointer-events: auto !important;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .mobile-menu-drawer.open {
@@ -685,18 +688,28 @@ img {
 }
 
 .mobile-drawer-link {
-  position: relative;
+  position: relative !important;
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
   font-size: 1rem;
   font-weight: 600;
   color: #cbd5e1;
-  padding: 13px 14px;
+  padding: 14px 16px !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
-  z-index: 2;
-  transition: color 0.25s ease;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(56, 189, 248, 0.25);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobile-drawer-link:active,
+.mobile-drawer-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
 }
 
 .mobile-drawer-link:last-of-type {
@@ -705,6 +718,14 @@ img {
 
 .mobile-drawer-link.active {
   color: #ffffff;
+}
+
+#btnMobilePrint {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  touch-action: manipulation;
+  position: relative;
+  z-index: 10 !important;
 }
 
 /* Mobile Floating Star Tracker Capsule (Frames active item, identical to desktop) */
@@ -718,8 +739,8 @@ img {
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.45);
   box-shadow: 0 0 24px rgba(56, 189, 248, 0.35), inset 0 0 12px rgba(56, 189, 248, 0.18);
-  pointer-events: none;
-  z-index: 1;
+  pointer-events: none !important;
+  z-index: 1 !important;
   transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.25, 1),
               height 0.35s cubic-bezier(0.2, 0.9, 0.25, 1),
               opacity 0.25s ease;
@@ -734,8 +755,8 @@ img {
   transform: translateY(-50%);
   width: 22px;
   height: 22px;
-  pointer-events: none;
-  z-index: 5;
+  pointer-events: none !important;
+  z-index: 2 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -771,6 +792,11 @@ img {
   opacity: 1 !important;
   transform: scale(2.2) !important;
   background: radial-gradient(circle, rgba(56, 189, 248, 0.95) 0%, rgba(255, 255, 255, 0.9) 45%, transparent 75%) !important;
+}
+
+.mobile-star-tracker.aggressive-orbit {
+  border-color: rgba(56, 189, 248, 0.95) !important;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.8), inset 0 0 18px rgba(56, 189, 248, 0.5) !important;
 }
 
 .mobile-star-tracker.aggressive-orbit {

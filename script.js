@@ -157,12 +157,14 @@
         }
       });
 
-      if (starTracker && targetLink) {
+      if (starTracker && targetLink && mobileDrawer.classList.contains('open')) {
         const top = targetLink.offsetTop;
         const height = targetLink.offsetHeight;
-        starTracker.style.transform = `translate3d(0, ${top}px, 0)`;
-        starTracker.style.height = `${height}px`;
-        starTracker.style.opacity = '1';
+        if (height > 0) {
+          starTracker.style.transform = `translate3d(0, ${top}px, 0)`;
+          starTracker.style.height = `${height}px`;
+          starTracker.style.opacity = '1';
+        }
       }
     }
 
@@ -186,33 +188,34 @@
       e.stopPropagation();
       const isOpen = mobileDrawer.classList.toggle('open');
       if (isOpen) {
-        setTimeout(() => {
-          syncMobileActive();
-        }, 30);
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            syncMobileActive();
+          }, 30);
+        });
       }
     });
 
     // Close when tapping outside
-    document.addEventListener('click', (e) => {
-      if (!mobileDrawer.contains(e.target) && e.target !== mobileBtn) {
+    const handleOutsideTap = (e) => {
+      if (!mobileDrawer.contains(e.target) && !mobileBtn.contains(e.target)) {
         mobileDrawer.classList.remove('open');
       }
-    });
-
-    // Prevent taps inside drawer from bubbling
-    mobileDrawer.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
+    };
+    document.addEventListener('click', handleOutsideTap);
+    document.addEventListener('touchstart', handleOutsideTap, { passive: true });
 
     // Handle clicks on mobile links
     mobileLinks.forEach((link, idx) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const href = link.getAttribute('href');
         if (!href || !href.startsWith('#')) return;
 
         // Check if user is ALREADY at this section:
-        const isAlreadyHere = (idx === currentMobileActiveIdx) || link.classList.contains('active');
+        const currentActive = determineActiveIndex();
+        const isAlreadyHere = (idx === currentActive) || (idx === currentMobileActiveIdx && link.classList.contains('active'));
 
         if (isAlreadyHere) {
           // If clicked again while at the content -> the star spins furiously!
@@ -229,29 +232,22 @@
           const headerH = header ? header.offsetHeight : 64;
           const rect = targetEl.getBoundingClientRect();
           const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-          const targetTop = Math.max(0, rect.top + scrollY - headerH - 8);
+          const targetTop = Math.max(0, rect.top + scrollY - headerH - 12);
 
-          // Scroll immediately
-          try {
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          } catch (err) {
-            window.scrollTo({ top: targetTop, behavior: 'smooth' });
-          }
-
-          // Fallback scroll
-          setTimeout(() => {
-            window.scrollTo({ top: targetTop, behavior: 'smooth' });
-          }, 60);
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+          });
 
           if (history.pushState) {
             history.pushState(null, '', href);
           }
         }
 
-        // Close drawer after short moment so scroll begins smoothly
+        // Close drawer after short visual confirmation so user sees the star move
         setTimeout(() => {
           mobileDrawer.classList.remove('open');
-        }, 180);
+        }, 160);
       });
     });
 
