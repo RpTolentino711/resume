@@ -22,13 +22,13 @@
 
   // Handle Official PDF Download
   function triggerPrint(e) {
-    showToast('Downloading official ATS CV (TOLENTINO_CV.pdf)...');
+    showToast('Downloading official ATS Resume (TOLENTINO_RESUME.pdf)...');
     const target = e?.currentTarget || e?.target;
     if (!target || !target.getAttribute || !target.getAttribute('download')) {
       if (e && e.preventDefault) e.preventDefault();
       const a = document.createElement('a');
-      a.href = 'TOLENTINO_CV.pdf';
-      a.download = 'TOLENTINO_CV.pdf';
+      a.href = 'TOLENTINO_RESUME.pdf';
+      a.download = 'TOLENTINO_RESUME.pdf';
       document.body.appendChild(a);
       a.click();
       a.remove();

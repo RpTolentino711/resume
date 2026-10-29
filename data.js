@@ -12,12 +12,12 @@ const DEFAULT_RESUME_DATA = {
     email: "romeopaolotolentino@gmail.com",
     phone: "+63 9668257301",
     location: "Batangas, Philippines",
-    university: "National University",
+    university: "National University - Lipa",
     degree: "Bachelor of Science in Information Technology",
     specialization: "Specialization in Mobile and Web Applications",
     years: "Expected 2027",
     yearLevel: "BSIT Student",
-    website: "https://romeopaolotolentino.dev",
+    website: "https://iamrpt.site/",
     github: "https://github.com/RpTolentino711",
     facebook: "https://www.facebook.com/romeo.tolentino.753612",
     linkedin: "https://linkedin.com/in/romeopaolotolentino",
@@ -28,7 +28,7 @@ const DEFAULT_RESUME_DATA = {
   },
   education: [
     {
-      institution: "National University",
+      institution: "National University - Lipa",
       degree: "Bachelor of Science in Information Technology",
       specialization: "Specialization in Mobile and Web Applications",
       period: "Expected 2027",
@@ -36,6 +36,15 @@ const DEFAULT_RESUME_DATA = {
     }
   ],
   skills: {
+    languages: ["C#", "C++", "Java", "Kotlin", "PHP", "JavaScript", "HTML", "CSS", "SQL"],
+    frameworksDevelopment: [".NET MAUI", "ASP.NET", "Flutter", "Laravel", "Android Development"],
+    frontend: ["React", "Next.js", "React Native", "Expo", "Tailwind CSS", "Bootstrap", "Framer Motion"],
+    database: ["MySQL", "SQLite", "MariaDB", "Firebase"],
+    developerTools: ["Visual Studio Code", "Antigravity", "Git", "GitHub"],
+    devopsCloud: ["GitHub Actions"],
+    apisIntegration: ["REST APIs", "PayMongo API", "Groq API", "Webhooks"],
+    aiData: ["NLP", "Random Forest", "LLM/API Integration"],
+    designPrototyping: ["Figma"],
     mobileDevelopment: ["Flutter", "Dart", "C#", ".NET MAUI", "Kotlin", "Android"],
     webDevelopment: ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS", "React", "PHP", "Laravel"],
     backendDatabase: ["PHP/PDO", "MySQL", "SQLite", "Firebase"],
@@ -54,15 +63,12 @@ const DEFAULT_RESUME_DATA = {
       role: "Capstone Full Stack Developer",
       client: "National University Lipa — Student Discipline Office (SDO)",
       featured: true,
-      technologies: ["PHP", "MySQL/MariaDB", "JavaScript", "HTML/CSS", "NFC", "REST APIs", "LLM API", "NLP", "Random Forest", "XAMPP"],
+      technologies: ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Groq API", "Random Forest", "NLP", "LLM API"],
       shortDescription: "Centralized student discipline and offense-management system developed for National University Lipa's Student Discipline Office (SDO), handling progressive offenses, sanctions, community service tracking, and UPCC case workflows.",
       highlights: [
-        "Designed and developed a centralized discipline management system for the National University Lipa Student Discipline Office (SDO).",
-        "Implemented NFC-based student identification and automated community service attendance tracking via student IDs, with manual login fallback.",
-        "Built automated offense recording, progressive offense tracking, rule-based violation letter generation, and automated parent/student notifications.",
-        "Engineered the University Panel on Case Conference (UPCC) case management module, including case scheduling, staff assignment, hearing workflows, voting, and administrative finalization.",
-        "Integrated an AI-assisted decision-support feature utilizing LLM APIs and handbook-based offense retrieval to provide suggested consequences during UPCC hearings.",
-        "Architected relational database structures (MySQL/MariaDB), role-based access control (RBAC), secure authentication with OTP/email verification, and comprehensive audit/notification logging."
+        "Developed a digital infraction and progressive offense management system for National University Lipa.",
+        "Implemented NFC-enabled student identification, offense tracking, community service monitoring, notifications, and violation letter generation.",
+        "Integrated AI-assisted offense analysis using REST APIs, NLP, Random Forest, and LLM capabilities to provide handbook-based consequence suggestions for UPCC personnel."
       ]
     },
     {
@@ -71,12 +77,12 @@ const DEFAULT_RESUME_DATA = {
       role: "Software Developer",
       client: "Academic / Personal Project",
       featured: true,
-      technologies: ["C#", ".NET MAUI", "SQLite", "PayMongo", "REST APIs"],
+      technologies: ["C#", ".NET MAUI", "SQLite", "MySQL", "PayMongo API", "REST APIs"],
       shortDescription: "Cross-platform mobile and desktop rental application allowing users to publish rental listings, browse catalogs, track transactions, and execute secure digital payments.",
       highlights: [
-        "Developed a cross-platform item rental application using **C#** and **.NET MAUI** targeting desktop and mobile operating systems.",
-        "Engineered local data persistence and robust CRUD functionality utilizing **SQLite** for smooth offline and online management.",
-        "Integrated **PayMongo API** to handle digital payment workflows for rental transactions and deposit authorizations."
+        "Developed a cross-platform item rental application using .NET MAUI with a MySQL database for data storage and management.",
+        "Implemented item listing, rental management, user authentication, and role-based buyer/seller functionality.",
+        "Integrated PayMongo for secure payment processing and transaction handling."
       ]
     },
     {
@@ -85,11 +91,12 @@ const DEFAULT_RESUME_DATA = {
       role: "Software Developer",
       client: "Academic Project",
       featured: true,
-      technologies: ["PHP", "MySQL/MariaDB", "JavaScript", "HTML/CSS", "XAMPP"],
+      technologies: ["PHP", "JavaScript", "MySQL", "Hostinger"],
       shortDescription: "Database-driven administrative management web application handling record tracking, data queries, and user operations.",
       highlights: [
-        "Developed a database-driven web application using **PHP**, **MySQL/MariaDB**, and **XAMPP**.",
-        "Implemented core system workflows, structured database operations, reliable CRUD functionality, and intuitive user-facing features."
+        "Developed a web-based system using PHP and MySQL to automate administrative processes and improve record management.",
+        "Implemented CRUD operations, database-driven workflows, authentication, and role-based system functionality.",
+        "Designed responsive interfaces and integrated backend validation for reliable data management."
       ]
     },
     {

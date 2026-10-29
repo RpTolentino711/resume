@@ -8,7 +8,7 @@
     "email": "romeopaolotolentino@gmail.com",
     "phone": "+63 9668257301",
     "location": "Batangas, Philippines",
-    "website": "https://romeopaolotolentino.dev",
+    "website": "https://iamrpt.site/",
     "github": "https://github.com/RpTolentino711",
     "facebook": "https://www.facebook.com/romeo.tolentino.753612",
     "linkedin": "https://linkedin.com/in/romeopaolotolentino",
@@ -19,7 +19,7 @@
   },
   "education": [
     {
-      "institution": "National University",
+      "institution": "National University - Lipa",
       "degree": "Bachelor of Science in Information Technology",
       "specialization": "Specialization in Mobile and Web Applications",
       "period": "Expected 2027",
@@ -49,7 +49,7 @@
       "name": "RentEase",
       "techStack": "C#, .NET MAUI, SQLite, PayMongo API",
       "highlights": [
-        "Developed a cross-platform item rental application using .NET MAUI with an offline-first SQLite database.",
+        "Developed a cross-platform item rental application using .NET MAUI with a MySQL database for data storage and management.",
         "Implemented item listing, rental management, user authentication, and role-based buyer/seller functionality.",
         "Integrated PayMongo for secure payment processing and transaction handling."
       ]
@@ -57,7 +57,7 @@
     {
       "id": "identitrack",
       "name": "IDENTITRACK",
-      "techStack": "PHP, JavaScript, MySQL, XAMPP, NFC, FLUTTER, REST API, Groq API, Random Forest",
+      "techStack": "PHP, JavaScript, MySQL, Hostinger, NFC, FLUTTER, REST API, Groq API, Random Forest",
       "highlights": [
         "Developed a digital infraction and progressive offense management system for National University Lipa.",
         "Implemented NFC-enabled student identification, offense tracking, community service monitoring, notifications, and violation letter generation.",
@@ -67,7 +67,7 @@
     {
       "id": "asrt",
       "name": "ASRT",
-      "techStack": "PHP, JavaScript, MySQL, XAMPP",
+      "techStack": "PHP, JavaScript, MySQL, Hostinger",
       "highlights": [
         "Developed a web-based system using PHP and MySQL to automate administrative processes and improve record management.",
         "Implemented CRUD operations, database-driven workflows, authentication, and role-based system functionality.",

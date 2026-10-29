@@ -20,12 +20,12 @@ $defaultData = [
     "email" => "romeopaolotolentino@gmail.com",
     "phone" => "+63 9668257301",
     "location" => "Batangas, Philippines",
-    "university" => "National University",
+    "university" => "National University - Lipa",
     "degree" => "Bachelor of Science in Information Technology",
     "specialization" => "Specialization in Mobile and Web Applications",
     "years" => "Expected 2027",
     "yearLevel" => "BSIT Student",
-    "website" => "https://romeopaolotolentino.dev",
+    "website" => "https://iamrpt.site/",
     "github" => "https://github.com/RpTolentino711",
     "facebook" => "https://www.facebook.com/romeo.tolentino.753612",
     "linkedin" => "https://linkedin.com/in/romeopaolotolentino",
@@ -36,7 +36,7 @@ $defaultData = [
   ],
   "education" => [
     [
-      "institution" => "National University",
+      "institution" => "National University - Lipa",
       "degree" => "Bachelor of Science in Information Technology",
       "specialization" => "Specialization in Mobile and Web Applications",
       "period" => "Expected 2027",
@@ -76,38 +76,36 @@ $defaultData = [
   "experience" => [],
   "projects" => [
     [
-      "name" => "IDENTITRACK: Digital Infraction & Progressive Offense Management System",
-      "role" => "Capstone Full Stack Developer",
-      "client" => "National University Lipa — Student Discipline Office (SDO)",
-      "technologies" => ["PHP", "MySQL/MariaDB", "JavaScript", "HTML/CSS", "NFC", "REST APIs", "LLM API", "NLP", "Random Forest", "XAMPP"],
-      "highlights" => [
-        "Designed and developed a centralized discipline management system for the **National University Lipa Student Discipline Office (SDO)**.",
-        "Implemented NFC-based student identification and automated community service attendance tracking via student IDs, with manual login fallback.",
-        "Built automated offense recording, progressive offense tracking, rule-based violation letter generation, and automated parent/student notifications.",
-        "Engineered the University Panel on Case Conference (UPCC) case management module, including case scheduling, staff assignment, hearing workflows, voting, and administrative finalization.",
-        "Integrated an AI-assisted decision-support feature utilizing LLM APIs and handbook-based offense retrieval to provide suggested consequences during UPCC hearings.",
-        "Architected relational database structures (MySQL/MariaDB), role-based access control (RBAC), secure authentication with OTP/email verification, and comprehensive audit/notification logging."
-      ]
-    ],
-    [
       "name" => "RentEase — Cross-Platform Item Rental Application",
       "role" => "Software Developer",
       "client" => "Academic / Personal Project",
-      "technologies" => ["C#", ".NET MAUI", "SQLite", "PayMongo"],
+      "technologies" => ["C#", ".NET MAUI", "SQLite", "MySQL", "PayMongo API"],
       "highlights" => [
-        "Developed a cross-platform item rental application using **C#** and **.NET MAUI** targeting desktop and mobile operating systems.",
-        "Implemented item listings, rental browsing, transaction management, and robust CRUD functionality utilizing **SQLite** for local data persistence.",
-        "Integrated **PayMongo API** to handle secure digital payment workflows for rental fees and transactions."
+        "Developed a cross-platform item rental application using .NET MAUI with a MySQL database for data storage and management.",
+        "Implemented item listing, rental management, user authentication, and role-based buyer/seller functionality.",
+        "Integrated PayMongo for secure payment processing and transaction handling."
+      ]
+    ],
+    [
+      "name" => "IDENTITRACK: Digital Infraction & Progressive Offense Management System",
+      "role" => "Capstone Full Stack Developer",
+      "client" => "National University Lipa — Student Discipline Office (SDO)",
+      "technologies" => ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Groq API", "Random Forest"],
+      "highlights" => [
+        "Developed a digital infraction and progressive offense management system for National University Lipa.",
+        "Implemented NFC-enabled student identification, offense tracking, community service monitoring, notifications, and violation letter generation.",
+        "Integrated AI-assisted offense analysis using REST APIs, NLP, Random Forest, and LLM capabilities to provide handbook-based consequence suggestions for UPCC personnel."
       ]
     ],
     [
       "name" => "ASRT — Web-Based Management System",
       "role" => "Software Developer",
       "client" => "Academic Project",
-      "technologies" => ["PHP", "MySQL/MariaDB", "JavaScript", "HTML/CSS", "XAMPP"],
+      "technologies" => ["PHP", "JavaScript", "MySQL", "Hostinger"],
       "highlights" => [
-        "Developed a database-driven web application using **PHP**, **MySQL/MariaDB**, and **XAMPP**.",
-        "Implemented core system workflows, structured database operations, reliable CRUD functionality, and user-facing administrative features."
+        "Developed a web-based system using PHP and MySQL to automate administrative processes and improve record management.",
+        "Implemented CRUD operations, database-driven workflows, authentication, and role-based system functionality.",
+        "Designed responsive interfaces and integrated backend validation for reliable data management."
       ]
     ],
     [
