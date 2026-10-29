@@ -1874,7 +1874,34 @@ img {
   font-size: 1.02rem;
   color: var(--text-secondary);
   line-height: 1.68;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
+}
+
+.editorial-proj-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.editorial-proj-highlights li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.editorial-proj-highlights li::before {
+  content: "•";
+  position: absolute;
+  left: 3px;
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .editorial-pill-badges {

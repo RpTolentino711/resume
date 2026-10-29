@@ -87,9 +87,9 @@ $defaultData = [
       ]
     ],
     [
-      "name" => "IDENTITRACK: Digital Infraction & Progressive Offense Management System",
+      "name" => "IDENTITRACK",
       "role" => "Capstone Full Stack Developer",
-      "client" => "National University Lipa — Student Discipline Office (SDO)",
+      "client" => "National University Lipa",
       "technologies" => ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Groq API", "Random Forest"],
       "highlights" => [
         "Developed a digital infraction and progressive offense management system for National University Lipa.",

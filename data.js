@@ -59,12 +59,12 @@ const DEFAULT_RESUME_DATA = {
   projects: [
     {
       id: "identitrack",
-      name: "IDENTITRACK: Digital Infraction & Progressive Offense Management System",
+      name: "IDENTITRACK",
       role: "Capstone Full Stack Developer",
-      client: "National University Lipa — Student Discipline Office (SDO)",
+      client: "National University Lipa",
       featured: true,
-      technologies: ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Groq API", "Random Forest", "NLP", "LLM API"],
-      shortDescription: "Centralized student discipline and offense-management system developed for National University Lipa's Student Discipline Office (SDO), handling progressive offenses, sanctions, community service tracking, and UPCC case workflows.",
+      technologies: ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Groq API", "Random Forest"],
+      shortDescription: "Developed a digital infraction and progressive offense management system for National University Lipa with NFC-enabled student tracking and AI-assisted consequence analysis.",
       highlights: [
         "Developed a digital infraction and progressive offense management system for National University Lipa.",
         "Implemented NFC-enabled student identification, offense tracking, community service monitoring, notifications, and violation letter generation.",
