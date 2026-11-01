@@ -34,7 +34,7 @@ A modern, high-performance, and executive-styled portfolio and ATS-compliant OJT
   - **Databases**: MySQL, MariaDB, SQLite
   - **Development Tools**: Visual Studio, VS Code, Android Studio, NetBeans, XAMPP, Git
   - **APIs & Integrations**: REST APIs, PayMongo, LLM APIs, OTP/Email services
-  - **AI & Data**: NLP, Random Forest, LLM API Integration, AI Decision Support
+  - **AI & Data**: NLP (TF-IDF), XGBoost Machine Learning, LLM API Integration, Python (Flask/CLI)
   - **Architecture**: NFC, CRUD, MVVM, Offline-First, RBAC, Authentication/Session
 - **Priority-Ranked Project Architecture**:
   1. **IDENTITRACK** (*Capstone Full Stack Developer*): Digital Infraction and Progressive Offense Management System for NU Lipa Student Discipline Office (SDO) with NFC student ID integration, LLM-based AI decision support, UPCC case hearings, rule-based letters, and audit logs.

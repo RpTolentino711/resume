@@ -654,7 +654,7 @@
         { name: 'Firebase', bg: 'rgba(245, 158, 11, 0.95)', border: '#fde047', glow: '#eab308', color: '#0f172a' },
         { name: 'Next.js', bg: 'rgba(15, 23, 42, 0.98)', border: '#ffffff', glow: '#cbd5e1', color: '#ffffff' },
         { name: 'Tailwind CSS', bg: 'rgba(14, 165, 233, 0.95)', border: '#7dd3fc', glow: '#38bdf8', color: '#ffffff' },
-        { name: 'Random Forest', bg: 'rgba(16, 185, 129, 0.95)', border: '#6ee7b7', glow: '#10b981', color: '#ffffff' },
+        { name: 'XGBoost', bg: 'rgba(16, 185, 129, 0.95)', border: '#6ee7b7', glow: '#10b981', color: '#ffffff' },
         { name: 'LLM API', bg: 'rgba(147, 51, 234, 0.95)', border: '#d8b4fe', glow: '#a855f7', color: '#ffffff' }
       ];
 
@@ -1438,7 +1438,7 @@
       'Bootstrap': 'A responsive frontend toolkit I use to accelerate consistent layouts and interface components.',
       'Tailwind CSS': 'A utility-first CSS framework I use to compose responsive interfaces with precise visual control.',
       'React': 'A component-based JavaScript library I use to structure interactive web interfaces.',
-      'Random Forest ML': 'A machine learning method I use for classification and decision-support experiments.',
+      'XGBoost ML': 'An optimized gradient boosting machine learning library used for classification and consequence-prediction modeling.',
       'Large Language Models (LLMs)': 'AI models I integrate for contextual assistance, generated guidance, and intelligent workflows.',
       'AI Decision APIs': 'External AI services I connect to applications to support intelligent recommendations and decisions.',
       'NLP Features': 'Natural language processing features that help applications interpret and work with human language.',

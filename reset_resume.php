@@ -31,7 +31,7 @@ $defaultData = [
     "linkedin" => "https://linkedin.com/in/romeopaolotolentino",
     "avatar" => "profile.jfif",
     "showAvatar" => false,
-    "summary" => "Information Technology student specializing in mobile and web application development, with practical experience in software development, UI/UX design, database-driven systems, artificial intelligence, and API integration. Experienced in developing academic and capstone applications using .NET MAUI, Flutter, PHP, Laravel, MySQL, and SQLite. Skilled in developing and training machine learning models using Random Forest, integrating Large Language Models (LLMs) and AI APIs, and implementing AI-assisted features into software applications. Proficient in translating system requirements into intuitive, user-centered interfaces and working across front-end, back-end, database, and AI components to deliver functional, reliable, and maintainable application solutions.",
+    "summary" => "Information Technology student specializing in mobile and web application development, with practical experience in software development, UI/UX design, database-driven systems, artificial intelligence, and API integration. Experienced in developing academic and capstone applications using .NET MAUI, Flutter, PHP, Laravel, MySQL, and SQLite. Skilled in developing and training machine learning models using XGBoost, integrating Large Language Models (LLMs) and AI APIs, and implementing AI-assisted features into software applications. Proficient in translating system requirements into intuitive, user-centered interfaces and working across front-end, back-end, database, and AI components to deliver functional, reliable, and maintainable application solutions.",
     "aboutPersonal" => "I'm passionate about building responsive web and mobile applications that are intuitive and reliable. I enjoy learning new developer tools, working across front-end and back-end workflows, and taking projects from idea to functional implementation."
   ],
   "education" => [
@@ -66,7 +66,7 @@ $defaultData = [
     ],
     [
       "category" => "AI & Data Concepts",
-      "items" => ["NLP", "Random Forest", "LLM API Integration", "AI Decision-Support Systems"]
+      "items" => ["NLP (TF-IDF)", "Machine Learning (XGBoost)", "LLM API Integration", "Python (Flask/CLI)"]
     ],
     [
       "category" => "Architecture & Engineering Practices",
@@ -90,11 +90,11 @@ $defaultData = [
       "name" => "IDENTITRACK",
       "role" => "Capstone Full Stack Developer",
       "client" => "National University Lipa",
-      "technologies" => ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Groq API", "Random Forest"],
+      "technologies" => ["PHP", "JavaScript", "MySQL", "Hostinger", "NFC", "FLUTTER", "REST API", "Python", "XGBoost"],
       "highlights" => [
         "Developed a digital infraction and progressive offense management system for National University Lipa.",
         "Implemented NFC-enabled student identification, offense tracking, community service monitoring, notifications, and violation letter generation.",
-        "Integrated AI-assisted offense analysis using REST APIs, NLP, Random Forest, and LLM capabilities to provide handbook-based consequence suggestions for UPCC personnel."
+        "Integrated AI-assisted offense analysis using REST APIs, TF-IDF NLP, and an XGBoost machine learning model to provide handbook-based consequence suggestions for UPCC personnel."
       ]
     ],
     [
