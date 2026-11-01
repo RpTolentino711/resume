@@ -1204,7 +1204,7 @@ img {
   gap: 75px;
   align-items: center;
   position: relative;
-  left: -220px;
+  left: -150px;
 }
 
 .about-photo-col {
@@ -3514,6 +3514,13 @@ html[data-theme="light"] .paper-sheet .sheet-cert-desc {
 /* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
+@media (max-width: 1360px) and (min-width: 1025px) {
+  .about-grid-layout {
+    left: -60px;
+    gap: 50px;
+  }
+}
+
 @media (max-width: 1024px) {
   .about-grid-layout {
     grid-template-columns: 1fr;
